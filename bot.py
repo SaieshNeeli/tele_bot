@@ -9,13 +9,13 @@ from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filte
 # === Tokens (read from environment) ===
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-BOT_USERNAME = os.getenv("BOT_USERNAME", "your_bot_username")  # Optional fallback
+#BOT_USERNAME = os.getenv("BOT_USERNAME", "your_bot_username")  # Optional fallback
 
 # === Function to call OpenRouter ===
 async def get_openrouter_reply(user_message):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": f"https://t.me/{BOT_USERNAME}",
+        "HTTP-Referer": f"https://t.me/@last_message_reply_bot",
         "X-Title": "Telegram Chatbot",
         "Content-Type": "application/json"
     }
